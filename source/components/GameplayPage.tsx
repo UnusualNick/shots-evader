@@ -221,10 +221,10 @@ export default function GameplayPage({userName, players: initialPlayers, initial
 
 	const renderPlayerSelection = () => (
 		<Box flexDirection="column" alignItems="center">
-			<Text color="yellow" bold>SELECT CURRENT PLAYER</Text>
+			<Text color="greenBright" bold>SELECT CURRENT PLAYER</Text>
 			<Box flexDirection="column" marginTop={1} alignItems="center">
 				{players.map((player, i) => (
-					<Text key={player.id} color={i === selectedOption ? 'yellow' : 'green'}>
+					<Text key={player.id} color={i === selectedOption ? 'greenBright' : 'green'}>
 						{i === selectedOption ? '► ' : '  '}{player.name} (Health: {player.health})
 					</Text>
 				))}
@@ -234,12 +234,12 @@ export default function GameplayPage({userName, players: initialPlayers, initial
 
 	const renderActionSelection = () => (
 		<Box flexDirection="column" alignItems="center">
-			<Text color="yellow" bold>SELECT ACTION FOR {currentAction.player}</Text>
+			<Text color="greenBright" bold>SELECT ACTION FOR {currentAction.player}</Text>
 			<Box flexDirection="column" marginTop={1} alignItems="center">
-				<Text color={selectedOption === 0 ? 'yellow' : 'green'}>
+				<Text color={selectedOption === 0 ? 'greenBright' : 'green'}>
 					{selectedOption === 0 ? '► ' : '  '}Shoot
 				</Text>
-				<Text color={selectedOption === 1 ? 'yellow' : 'green'}>
+				<Text color={selectedOption === 1 ? 'greenBright' : 'green'}>
 					{selectedOption === 1 ? '► ' : '  '}Use Item
 				</Text>
 			</Box>
@@ -248,7 +248,7 @@ export default function GameplayPage({userName, players: initialPlayers, initial
 
 	const renderTargetSelection = () => (
 		<Box flexDirection="column">
-			<Text color="yellow" bold>SELECT TARGET FOR {currentAction.player}:</Text>
+			<Text color="greenBright" bold>SELECT TARGET FOR {currentAction.player}:</Text>
 			<Box flexDirection="column" marginTop={1}>
 				{players.map((player, i) => (
 					<Text key={player.id} color={i === selectedOption ? 'yellow' : 'green'}>
@@ -265,18 +265,18 @@ export default function GameplayPage({userName, players: initialPlayers, initial
 
 		return (
 			<Box flexDirection="column">
-				<Box borderStyle="single" borderColor="white" paddingX={2} paddingY={1} marginBottom={1}>
-					<Text color="white" bold>SELECT ITEM FOR {currentAction.player}:</Text>
+				<Box borderStyle="single" borderColor="green" paddingX={2} paddingY={1} marginBottom={1}>
+					<Text color="green" bold>SELECT ITEM FOR {currentAction.player}:</Text>
 				</Box>
 				{availableItems.length === 0 ? (
 					<Box borderStyle="single" borderColor="red" paddingX={2} paddingY={1}>
 						<Text color="red">NO ITEMS AVAILABLE</Text>
 					</Box>
 				) : (
-					<Box flexDirection="column" marginTop={1} borderStyle="single" borderColor="gray" paddingX={2} paddingY={1}>
+					<Box flexDirection="column" marginTop={1} borderStyle="single" borderColor="greenBright" paddingX={2} paddingY={1}>
 						{availableItems.map(([itemName, quantity], i) => (
-							<Box key={itemName} borderStyle="single" borderColor={i === selectedOption ? 'yellow' : 'green'} paddingX={1} marginBottom={1}>
-								<Text color={i === selectedOption ? 'yellow' : 'green'}>
+							<Box key={itemName} borderStyle="single" borderColor={i === selectedOption ? 'greenBright' : 'green'} paddingX={1} marginBottom={1}>
+								<Text color={i === selectedOption ? 'greenBright' : 'green'}>
 									{i === selectedOption ? '> ' : '  '}[{quantity}x] {itemName}
 								</Text>
 							</Box>
@@ -289,22 +289,22 @@ export default function GameplayPage({userName, players: initialPlayers, initial
 
 	const renderResultSelection = () => (
 		<Box flexDirection="column">
-			<Box borderStyle="single" borderColor="white" paddingX={2} paddingY={1} marginBottom={1}>
-				<Text color="white" bold>SHOT RESULT:</Text>
+			<Box borderStyle="single" borderColor="green" paddingX={2} paddingY={1} marginBottom={1}>
+				<Text color="green" bold>SHOT RESULT:</Text>
 			</Box>
 			{currentAction.target && (
 				<Box borderStyle="single" borderColor="cyan" paddingX={2} paddingY={1} marginBottom={1}>
 					<Text color="cyan">TARGET: {currentAction.target}</Text>
 				</Box>
 			)}
-			<Box flexDirection="column" marginTop={1} borderStyle="single" borderColor="gray" paddingX={2} paddingY={1}>
-				<Box borderStyle="single" borderColor={selectedOption === 0 ? 'yellow' : 'red'} paddingX={1} marginBottom={1}>
-					<Text color={selectedOption === 0 ? 'yellow' : 'red'}>
+			<Box flexDirection="column" marginTop={1} borderStyle="single" borderColor="greenBright" paddingX={2} paddingY={1}>
+				<Box borderStyle="single" borderColor={selectedOption === 0 ? 'greenBright' : 'red'} paddingX={1} marginBottom={1}>
+					<Text color={selectedOption === 0 ? 'greenBright' : 'red'}>
 						{selectedOption === 0 ? '> ' : '  '}LIVE ROUND [DAMAGE]
 					</Text>
 				</Box>
-				<Box borderStyle="single" borderColor={selectedOption === 1 ? 'yellow' : 'cyan'} paddingX={1}>
-					<Text color={selectedOption === 1 ? 'yellow' : 'cyan'}>
+				<Box borderStyle="single" borderColor={selectedOption === 1 ? 'greenBright' : 'cyan'} paddingX={1}>
+					<Text color={selectedOption === 1 ? 'greenBright' : 'cyan'}>
 						{selectedOption === 1 ? '> ' : '  '}BLANK ROUND [SAFE]
 					</Text>
 				</Box>
@@ -323,7 +323,7 @@ export default function GameplayPage({userName, players: initialPlayers, initial
 			<Box flexDirection="column" alignItems="center" width="80%">
 
 				{/* Ammo Status */}
-				<Box flexDirection="column" alignItems="center" marginBottom={2} borderStyle="single" borderColor="gray" paddingX={3} paddingY={1}>
+				<Box flexDirection="column" alignItems="center" marginBottom={2} borderStyle="single" borderColor="green" paddingX={3} paddingY={1}>
 					<Text color="red" bold>AMMO STATUS</Text>
 					<Box flexDirection="row" marginTop={1} gap={4}>
 						<Box flexDirection="column" alignItems="center">
@@ -346,7 +346,7 @@ export default function GameplayPage({userName, players: initialPlayers, initial
 				</Box>
 
 				{/* Players Status */}
-				<Box flexDirection="column" alignItems="center" marginBottom={2} borderStyle="single" borderColor="magenta" paddingX={3} paddingY={1}>
+				<Box flexDirection="column" alignItems="center" marginBottom={2} borderStyle="single" borderColor="greenBright" paddingX={3} paddingY={1}>
 					<Text color="magenta" bold>PLAYER STATUS</Text>
 					{players.map(player => {
 						const itemCount = Object.values(player.items).reduce((sum, qty) => sum + qty, 0);
@@ -359,7 +359,7 @@ export default function GameplayPage({userName, players: initialPlayers, initial
 				</Box>
 
 				{/* Action Selection */}
-				<Box flexDirection="column" alignItems="center" borderStyle="single" borderColor="yellow" paddingX={3} paddingY={1} width="100%">
+				<Box flexDirection="column" alignItems="center" borderStyle="single" borderColor="green" paddingX={3} paddingY={1} width="100%">
 					{phase === 'selectPlayer' && renderPlayerSelection()}
 					{phase === 'selectAction' && renderActionSelection()}
 					{phase === 'selectTarget' && renderTargetSelection()}
@@ -369,12 +369,12 @@ export default function GameplayPage({userName, players: initialPlayers, initial
 
 				{/* Controls */}
 				<Box marginTop={2} justifyContent="center">
-					<Text color="gray">↑↓ navigate, Enter confirm, Esc back to setup, Q quit</Text>
+					<Text color="green">↑↓ navigate, Enter confirm, Esc back to setup, Q quit</Text>
 				</Box>
 
 				{/* Recent History */}
 				{gameHistory.length > 0 && (
-					<Box flexDirection="column" alignItems="center" marginTop={2} borderStyle="single" borderColor="blue" paddingX={3} paddingY={1} width="100%">
+					<Box flexDirection="column" alignItems="center" marginTop={2} borderStyle="single" borderColor="greenBright" paddingX={3} paddingY={1} width="100%">
 						<Text color="blue" bold>RECENT ACTIONS</Text>
 						{gameHistory.slice(-3).map((action, i) => {
 							let actionText = `${action.player}: ${action.action}`;

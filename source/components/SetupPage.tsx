@@ -195,30 +195,30 @@ export default function SetupPage({userName, onGameStart}: SetupPageProps) {
 
 	const renderPlayersStep = () => (
 		<Box flexDirection="column" alignItems="center" justifyContent="center" width="100%">
-			<Box borderStyle="single" borderColor="white" paddingX={2} paddingY={1} marginBottom={2}>
-				<Text color="white" bold>SETUP: NUMBER OF PLAYERS</Text>
+			<Box borderStyle="single" borderColor="green" paddingX={2} paddingY={1} marginBottom={2}>
+				<Text color="green" bold>SETUP: NUMBER OF PLAYERS</Text>
 			</Box>
-			<Box borderStyle="single" borderColor="yellow" paddingX={4} paddingY={1} marginBottom={2}>
-				<Text color="yellow" bold>Players: {numberOfPlayers}</Text>
+			<Box borderStyle="single" borderColor="greenBright" paddingX={4} paddingY={1} marginBottom={2}>
+				<Text color="greenBright" bold>Players: {numberOfPlayers}</Text>
 			</Box>
-			<Box borderStyle="single" borderColor="gray" paddingX={2} paddingY={1}>
-				<Text color="gray">Type number (2-8) or use ↑↓ arrows, Enter to confirm</Text>
+			<Box borderStyle="single" borderColor="greenBright" paddingX={2} paddingY={1}>
+				<Text color="greenBright">Type number (2-8) or use ↑↓ arrows, Enter to confirm</Text>
 			</Box>
 		</Box>
 	);
 
 	const renderNamingStep = () => (
 		<Box flexDirection="column" alignItems="center">
-			<Box borderStyle="single" borderColor="white" paddingX={2} paddingY={1} marginBottom={2}>
-				<Text color="white" bold>SETUP: PLAYER NAMES</Text>
+			<Box borderStyle="single" borderColor="green" paddingX={2} paddingY={1} marginBottom={2}>
+				<Text color="green" bold>SETUP: PLAYER NAMES</Text>
 			</Box>
 			<Box borderStyle="single" borderColor={players[currentPlayerIndex]?.isUser ? 'green' : 'red'} paddingX={2} paddingY={1} marginBottom={2}>
 				<Text color={players[currentPlayerIndex]?.isUser ? 'green' : 'red'}>
 					{players[currentPlayerIndex]?.isUser ? 'USER' : 'OPPONENT'}: {players[currentPlayerIndex]?.name}
 				</Text>
 			</Box>
-			<Box borderStyle="single" borderColor="gray" paddingX={2} paddingY={1}>
-				<Text color="gray">Names are pre-set. Press Enter to continue</Text>
+			<Box borderStyle="single" borderColor="greenBright" paddingX={2} paddingY={1}>
+				<Text color="greenBright">Names are pre-set. Press Enter to continue</Text>
 			</Box>
 		</Box>
 	);
@@ -227,19 +227,19 @@ export default function SetupPage({userName, onGameStart}: SetupPageProps) {
 		const currentPlayer = players[currentPlayerIndex];
 		return (
 			<Box flexDirection="column" alignItems="center">
-				<Box borderStyle="single" borderColor="white" paddingX={2} paddingY={1} marginBottom={2}>
-					<Text color="white" bold>SETUP: PLAYER HEALTH</Text>
+				<Box borderStyle="single" borderColor="green" paddingX={2} paddingY={1} marginBottom={2}>
+					<Text color="green" bold>SETUP: PLAYER HEALTH</Text>
 				</Box>
 				<Box borderStyle="single" borderColor={currentPlayer?.isUser ? 'green' : 'red'} paddingX={2} paddingY={1} marginBottom={2}>
 					<Text color={currentPlayer?.isUser ? 'green' : 'red'}>
 						Setting health for {currentPlayer?.name}
 					</Text>
 				</Box>
-				<Box borderStyle="single" borderColor="yellow" paddingX={4} paddingY={1} marginBottom={2}>
-					<Text color="yellow" bold>Health: {selectedValue}</Text>
+				<Box borderStyle="single" borderColor="greenBright" paddingX={4} paddingY={1} marginBottom={2}>
+					<Text color="greenBright" bold>Health: {selectedValue}</Text>
 				</Box>
-				<Box borderStyle="single" borderColor="gray" paddingX={2} paddingY={1}>
-					<Text color="gray">Type number (1-6) or use ↑↓ arrows, Enter to confirm</Text>
+				<Box borderStyle="single" borderColor="greenBright" paddingX={2} paddingY={1}>
+					<Text color="greenBright">Type number (1-6) or use ↑↓ arrows, Enter to confirm</Text>
 				</Box>
 			</Box>
 		);
@@ -249,21 +249,21 @@ export default function SetupPage({userName, onGameStart}: SetupPageProps) {
 		const currentPlayer = players[currentPlayerIndex];
 		return (
 			<Box flexDirection="column" alignItems="center" width="100%">
-				<Box borderStyle="single" borderColor="white" paddingX={2} paddingY={1} marginBottom={2}>
-					<Text color="white" bold>SETUP: PLAYER ITEMS</Text>
+				<Box borderStyle="single" borderColor="green" paddingX={2} paddingY={1} marginBottom={2}>
+					<Text color="green" bold>SETUP: PLAYER ITEMS</Text>
 				</Box>
 				<Box borderStyle="single" borderColor={currentPlayer?.isUser ? 'green' : 'red'} paddingX={2} paddingY={1} marginBottom={2}>
 					<Text color={currentPlayer?.isUser ? 'green' : 'red'}>
 						Selecting items for {currentPlayer?.name}
 					</Text>
 				</Box>
-				<Box flexDirection="column" marginTop={1} width="60%" borderStyle="single" borderColor="gray" paddingX={2} paddingY={1}>
+				<Box flexDirection="column" marginTop={1} width="60%" borderStyle="single" borderColor="greenBright" paddingX={2} paddingY={1}>
 					{availableItems.map((item, i) => {
 						const isSelected = i === selectedValue;
 						const quantity = currentPlayer?.items[item] || 0;
 						const prefix = isSelected ? '>' : ' ';
 						const display = quantity > 0 ? `[${quantity}x]` : '[--]';
-						const color = isSelected ? 'yellow' : 'green';
+						const color = isSelected ? 'greenBright' : 'green';
 
 						return (
 							<Box key={item}>
@@ -272,8 +272,8 @@ export default function SetupPage({userName, onGameStart}: SetupPageProps) {
 						);
 					})}
 				</Box>
-				<Box marginTop={2} borderStyle="single" borderColor="gray" paddingX={2} paddingY={1}>
-					<Text color="gray">↑↓ navigate, Type numbers (0-9), Space +1, X -1, Enter next</Text>
+				<Box marginTop={2} borderStyle="single" borderColor="greenBright" paddingX={2} paddingY={1}>
+					<Text color="greenBright">↑↓ navigate, Type numbers (0-9), Space +1, X -1, Enter next</Text>
 				</Box>
 			</Box>
 		);
@@ -281,23 +281,23 @@ export default function SetupPage({userName, onGameStart}: SetupPageProps) {
 
 	const renderAmmoStep = () => (
 		<Box flexDirection="column" alignItems="center">
-			<Box borderStyle="single" borderColor="white" paddingX={2} paddingY={1} marginBottom={2}>
-				<Text color="white" bold>SETUP: SHOTGUN AMMO</Text>
+			<Box borderStyle="single" borderColor="green" paddingX={2} paddingY={1} marginBottom={2}>
+				<Text color="green" bold>SETUP: SHOTGUN AMMO</Text>
 			</Box>
-			<Box flexDirection="column" marginTop={1} borderStyle="single" borderColor="gray" paddingX={4} paddingY={1}>
-				<Box borderStyle="single" borderColor={selectedValue === 0 ? 'yellow' : 'red'} paddingX={2} paddingY={1} marginBottom={1}>
-					<Text color={selectedValue === 0 ? 'yellow' : 'red'}>
+			<Box flexDirection="column" marginTop={1} borderStyle="single" borderColor="greenBright" paddingX={4} paddingY={1}>
+				<Box borderStyle="single" borderColor={selectedValue === 0 ? 'greenBright' : 'red'} paddingX={2} paddingY={1} marginBottom={1}>
+					<Text color={selectedValue === 0 ? 'greenBright' : 'red'}>
 						{selectedValue === 0 ? '> ' : '  '}LIVE ROUNDS: [{liveAmmo}]
 					</Text>
 				</Box>
-				<Box borderStyle="single" borderColor={selectedValue === 1 ? 'yellow' : 'cyan'} paddingX={2} paddingY={1}>
-					<Text color={selectedValue === 1 ? 'yellow' : 'cyan'}>
+				<Box borderStyle="single" borderColor={selectedValue === 1 ? 'greenBright' : 'cyan'} paddingX={2} paddingY={1}>
+					<Text color={selectedValue === 1 ? 'greenBright' : 'cyan'}>
 						{selectedValue === 1 ? '> ' : '  '}BLANK ROUNDS: [{blankAmmo}]
 					</Text>
 				</Box>
 			</Box>
-			<Box marginTop={2} borderStyle="single" borderColor="gray" paddingX={2} paddingY={1}>
-				<Text color="gray">Type numbers, ↑↓ select, ←→ adjust, Enter to start</Text>
+			<Box marginTop={2} borderStyle="single" borderColor="greenBright" paddingX={2} paddingY={1}>
+				<Text color="greenBright">Type numbers, ↑↓ select, ←→ adjust, Enter to start</Text>
 			</Box>
 			{(liveAmmo === 0 || blankAmmo === 0) && (
 				<Box marginTop={1} borderStyle="single" borderColor="red" paddingX={2} paddingY={1}>
@@ -313,7 +313,7 @@ export default function SetupPage({userName, onGameStart}: SetupPageProps) {
 				<Text color="red" bold>BUCKSHOT ROULETTE TACTICAL ASSISTANT</Text>
 			</Box>
 
-			<Box borderStyle="single" borderColor="gray" paddingX={2} paddingY={1} width={80} justifyContent="center">
+			<Box borderStyle="single" borderColor="green" paddingX={2} paddingY={1} width={80} justifyContent="center">
 				{step === 'players' && renderPlayersStep()}
 				{step === 'naming' && renderNamingStep()}
 				{step === 'health' && renderHealthStep()}
@@ -322,7 +322,7 @@ export default function SetupPage({userName, onGameStart}: SetupPageProps) {
 			</Box>
 
 			<Box justifyContent="center" marginTop={3}>
-				<Text color="gray">Press Q to quit</Text>
+				<Text color="green">Press Q to quit</Text>
 			</Box>
 		</Box>
 	);
